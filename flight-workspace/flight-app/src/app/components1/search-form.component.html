@@ -1,0 +1,94 @@
+<div class="search-form">
+  <div class="form-grid">
+    <!-- Ville de départ -->
+    <div class="form-group">
+      <label>Ville de départ</label>
+      <div class="input-wrapper">
+        <input 
+          type="text" 
+          [(ngModel)]="villeDepart" 
+          placeholder="djerba, tunisie"
+          class="form-input"
+        />
+      </div>
+    </div>
+
+    <!-- Bouton d'échange -->
+    <div class="swap-button-container">
+      <button type="button" class="swap-button" (click)="swapCities()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 17L21 12L16 7V10H4V14H16V17Z" fill="currentColor"/>
+          <path d="M8 7L3 12L8 17V14H20V10H8V7Z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Ville d'arrivée -->
+    <div class="form-group">
+      <label>Ville d'arrivée</label>
+      <div class="input-wrapper">
+        <input 
+          type="text" 
+          [(ngModel)]="villeArrivee" 
+          placeholder="paris, France"
+          class="form-input"
+        />
+      </div>
+    </div>
+
+    <!-- Trier par -->
+    <div class="form-group">
+      <label>Trier par</label>
+      <div class="input-wrapper">
+        <select [(ngModel)]="tri" class="form-select">
+          <option value="prix">Prix croissant</option>
+          <option value="tempsTrajet">Temps de trajet</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-grid dates-grid">
+    <!-- Date de départ -->
+    <div class="form-group">
+      <label>Date de départ</label>
+      <div class="input-wrapper date-wrapper">
+        <div class="date-picker" (click)="toggleDepartureCalendar()">
+          <input 
+            type="text" 
+            [value]="dateDepart" 
+            readonly
+            placeholder="Sélectionner une date"
+            class="form-input"
+          />
+          <!-- Icône calendrier moderne -->
+          <span class="date-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor" 
+                 class="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 
+                    00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          </span>
+        </div>
+        <lib-calendar 
+          *ngIf="showDepartureCalendar"
+          (dateSelected)="onDepartureDateSelected($event)"
+          class="calendar-popup">
+        </lib-calendar>
+      </div>
+    </div>
+
+    <!-- Bouton de recherche aligné -->
+    <div class="form-group search-button-inline">
+      <label>&nbsp;</label> <!-- espace pour alignement -->
+      <button type="button" class="search-button" (click)="onSubmit()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3S3 5.91 3 9.5S5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14Z" fill="currentColor"/>
+        </svg>
+        Rechercher des vols
+      </button>
+    </div>
+  </div>
+</div>

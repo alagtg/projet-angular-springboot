@@ -1,0 +1,35 @@
+<div id="results-section" class="vol-list" *ngIf="pagedVols && pagedVols.length > 0; else noVols">
+  <table>
+    <thead>
+      <tr>
+        <th>Ville départ</th>
+        <th>Ville arrivée</th>
+        <th>Date départ</th>
+        <th>Date arrivée</th>
+        <th>Prix</th>
+        <th>Temps trajet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vol of pagedVols">
+        <td>{{ vol.villeDepart }}</td>
+        <td>{{ vol.villeArrivee }}</td>
+        <td>{{ vol.dateDepart | date: 'short' }}</td>
+        <td>{{ vol.dateArrivee | date: 'short' }}</td>
+        <td>{{ vol.prix }} €</td>
+        <td>{{ vol.tempsTrajet }} min</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">⬅ Précédent</button>
+    <span>Page {{ currentPage }} / {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Suivant ➡</button>
+  </div>
+</div>
+
+<ng-template #noVols>
+  <p class="no-results">Aucun vol trouvé.</p>
+</ng-template>
