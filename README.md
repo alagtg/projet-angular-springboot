@@ -67,4 +67,5 @@ nx serve flight-app
 Un fichier trajets.json
  est fourni à la racine du projet.
 Il contient des exemples de vols pour tester facilement l’API
+<img width="369" height="238" alt="classe_digramme" src="https://github.com/user-attachments/assets/2100df78-8fba-463a-9188-31063daed0c7" />
 
