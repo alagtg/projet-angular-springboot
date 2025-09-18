@@ -1,0 +1,64 @@
+
+[
+
+
+  {
+    "dateDepart": "2025-09-20T10:00:00",
+    "dateArrivee": "2025-09-20T12:00:00",
+    "villeDepart": "Tunis",
+    "villeArrivee": "Paris",
+    "prix": 350,
+    "tempsTrajet": 120,
+    "capacite": 180
+  },
+  {
+    "dateDepart": "2025-09-21T09:00:00",
+    "dateArrivee": "2025-09-21T11:00:00",
+    "villeDepart": "Sfax",
+    "villeArrivee": "Rome",
+    "prix": 250,
+    "tempsTrajet": 150,
+    "capacite": 100
+  },
+  {
+    "dateDepart": "2025-09-22T14:00:00",
+    "dateArrivee": "2025-09-22T16:30:00",
+    "villeDepart": "Djerba",
+    "villeArrivee": "Istanbul",
+    "prix": 400,
+    "tempsTrajet": 150,
+    "capacite": 200
+  },
+
+  {
+    "dateDepart": "2025-09-24T18:00:00",
+    "dateArrivee": "2025-09-24T20:45:00",
+    "villeDepart": "Tunis",
+    "villeArrivee": "Madrid",
+    "prix": 300,
+    "tempsTrajet": 165,
+    "capacite": 170
+  },
+
+
+
+  {
+    "nom": "ala User",
+    "email": "ala@email.com",
+    "nombrePlaces": 10,
+    "vol": {
+        "id": 10 
+    }
+    
+},
+
+{
+    "nom": "ala User",
+    "email": "ala@email.com",
+    "nombrePlaces": 10,
+    "vol": {
+        "id": "selon l'id de vol que vous avez créé dans vols.json"
+    }
+}
+
+] 
